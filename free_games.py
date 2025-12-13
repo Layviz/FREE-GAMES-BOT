@@ -54,7 +54,7 @@ def store_in_db(games):
     existing_links = {row[0] for row in c.fetchall()}
     games_to_insert = [game for game in games_with_date if game[1] not in existing_links]
     if games_to_insert:
-        c.executemany('INSERT INTO games (title, link, date_added) VALUES (?, ?, ?)', games_with_date)
+        c.executemany('INSERT INTO games (title, link, platform, date_added) VALUES (?, ?, ?, ?)', games_with_date)
         conn.commit()
     conn.close()
 
