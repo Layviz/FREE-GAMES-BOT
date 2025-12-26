@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import sqlite3
 from datetime import datetime
 
-steam_search_url = "https://store.steampowered.com/search?maxprice=free&category1=994%2C996%2C993%2C992%2C998&specials=1&ndl=1"
+steam_search_url = "https://store.steampowered.com/search?specials=1&maxprice=free&category1=994%2C993%2C992%2C998%2C21&ndl=1"
 
 def fetch_free_steam_games():
     response = requests.get(steam_search_url)
